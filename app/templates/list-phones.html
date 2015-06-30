@@ -1,0 +1,35 @@
+
+
+<div class="container clearfix" ng-controller="HomeController">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 big-text">
+                <strong>Latest Phones</strong>
+            </div>
+            <div class="col-md-6">
+                <a href="#/home" class="btn btn-default pull-right">See all</a>
+            </div>
+        </div>
+       
+           <div class="row" ng-repeat="row in smartphones.range()">
+            <div class="col-md-4 text-center" ng-repeat="smartphone in smartphones.slice(row, row + 3) | filter: search">
+                <div phone-home-directive smart="smartphone" />
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+
+            <div class="col-md-6 big-text">
+                <strong>Latest Models</strong>
+            </div>
+            <div class="col-md-6">
+                <a href="#/all-models" class="btn btn-default pull-right">See all</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 text-center" ng-repeat="model in models">
+                <div model-home-directive model="model" />
+            </div>
+        </div>
+    </div>
+</div>

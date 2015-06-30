@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3><strong>{{model.name | uppercase}}</strong></h3>
+            <p>
+                <strong>Price:</strong> {{model.price | currency: $}}
+            </p>
+            <p>
+                <strong>Year:</strong> {{model.yearIntroduced}}
+            </p>
+            <p>
+                <strong>Display:</strong> {{model.display}}
+            </p>
+            <p>
+                <strong>Status:</strong> {{model.status | status}}
+            </p>
+        </div>
+        <div class="col-md-6 image-container">
+            <img class="img-thumbnail" ng-src="{{model.image}}" />
+
+        </div>
+    </div>
+</div>

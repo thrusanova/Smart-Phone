@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" ng-app="phoneApp">
+<head>
+  <meta charset="utf-8">
+  <title>Phone Apps</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" href=" css/bootstrap-theme.min.css"/>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body ng-app="phoneApp" ng-controller="PageController">
+	<div class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">Smartphones</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+            	<a href="editPhone.html">Add phone</a>
+            	</li>
+          </ul> 
+        </div>
+      </div>
+    </div>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-6">
+    			hi
+    		</div>
+    	</div>
+	</div>
+	<footer class="text-center">
+		<hr/>
+<small>
+	Copiright:{{ author }}
+</br>Year:{{ year }}
+</small>
+	</footer>
+  <script src="lib/jquery-2.1.4.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script scr="js/app.js"></script>
+ <script src="js/controllers/PageController.js"></script>
+ 
+</body>
+</html>

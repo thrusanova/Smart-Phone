@@ -1,0 +1,69 @@
+ <div class="container clearfix" ng-controller="EditPhoneController" id="main-container">
+      <div class="row">
+        <div class="col-md-6">
+           <form class="form-horizontal" name="newPhoneForm">
+                <fieldset>
+                  <legend>Main Information</legend>
+                  <div class="form-group">
+                    <label for="name" class="col-lg-2 control-label">Name</label>
+                    <div class="col-lg-10">
+                      <input type="text" required="required" class="form-control form-validation" id="name" placeholder="Name" ng-model="smartphone.name">
+                   </div>
+                 </div>
+                  <div class="form-group">
+                    <label for="image" class="col-lg-2 control-label">Image</label>
+                  <div class="col-lg-10">
+                      <input type="text" required ng-pattern="/\.(gif|jpg|jpeg|tiff|png)$/i"class="form-control form-validation" id="image" placeholder="Image URL"
+                      ng-model="smartphone.image">
+                  </div>
+                 </div> 
+                 <div class="form-group">
+                    <label for="Description" class="col-lg-2 control-label">Description</label>
+                  <div class="col-lg-10">
+                       <input type="text"  required="required" class="form-control form"  id="Description" placeholder="Description" ng-model="smartphone.description">
+                    </div>
+                 </div>
+                   <div class="form-group">
+                    <label for="Date" class="col-lg-2 control-label">Created</label>
+                  <div class="col-lg-10">
+                       <input type="text"  required="required" class="form-control form" datepicker id="date" placeholder="dd/mm/yyyy" ng-model="smartphone.additionalInformation.yearIntroduced">
+                    </div>
+                 </div>
+                </fieldset>
+                <fieldset>
+                  <legend>
+                    Optional information
+                  </legend>
+                  <div class="form-group">
+                    <label for="Location" class="col-lg-2 control-label">Location</label>
+                    <div class="col-lg-10">
+                      <input type="text"  class="form-control" id="Location" placeholder="Location" ng-model="smartphone.additionalInformation.location">
+                  </div>
+                  </div>
+                   <div class="form-group">
+                    <label for="Manufacturer" class="col-lg-2 control-label">Manufacturer</label>
+                    <div class="col-lg-10">
+                      <input type="text"  class="form-control" id="Manufacturer" placeholder="Manufacturer" ng-model="smartphone.additionalInformation.manufacturer">
+                   </div>
+                 </div>
+                   <div class="form-group">
+                    <label for="Models" class="col-lg-2 control-label">Models</label>
+                 <div class="col-lg-10">
+                      <input type="text"  class="form-control" id="Models" placeholder="Models" ng-model="smartphone.additionalInformation.models">
+                  </div>
+                </div>
+                </fieldset>
+                   <div class="form-group">
+                    <div class="pull-right">
+                       
+                      <button  class="btn btn-default" ng-disabled="newPhone.$invalid" ng-click="savePhone(smartphone,newPhoneForm)">Save</button>
+                      <button  class="btn btn-default" ng-click="cansel()">Cansel</button>
+                    </div>
+                  </div>
+              </form>
+        </div>
+        <div class="col-md-6 image-container">
+          <img src="" ng-src="{{ smartphone.image }}"
+        </div>
+      </div>
+ </div> 

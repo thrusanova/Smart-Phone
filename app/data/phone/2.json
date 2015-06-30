@@ -1,0 +1,71 @@
+{
+    "id": 2,
+    "name": "Samsung",
+    "image": "/img/3s.png",
+    "content": "Beauty combined with power",
+    "additionalInformation": {
+        "location": "South-Korean",
+        "manufacturer": "Samsung Electronics",
+        "capacity": [
+            "4 GB",
+            "8 GB",
+            "16 GB",
+            "32 GB",
+            "64 GB",
+            "128 GB"
+        ],
+        "models": 5
+    },
+    "models": [
+        {
+            "id": 1,
+            "name": "Galaxy S6 edge",
+            "yearIntroduced": 2015,
+            "image": "/img/NoteEdge_DualLock.jpg",
+            "display": "5.1 inches",
+            "price": 400,
+            "rating": 0,
+            "status": 1
+        },
+        {
+            "id": 2,
+            "name": "Galaxy S3",
+            "yearIntroduced": 2012,
+            "image": "/img/res_d59895405c8c745442a01dd21f065190.jpg",
+            "display": "4.8 inches",
+            "price": 250,
+            "rating": 0,
+            "status": 1
+        },
+        {
+            "id": 3,
+            "name": "Galaxy S5",
+            "yearIntroduced": 2013,
+            "image": "/img/3s.png",
+            "display": "5.1 inches",
+            "price": 500,
+            "rating": 0,
+            "status": 1
+        },
+        {
+            "id": 4,
+            "name": "Galaxy Note Edge",
+            "yearIntroduced": 2014,
+            "image": "/img/4s.jpg",
+            "display": "5.1 inches",
+            "price": 700,
+            "rating": 0,
+            "status": 1
+        },
+        {
+            "id": 5,
+            "name": "Galaxy S5 Mini",
+            "yearIntroduced": 2014,
+            "image": "/img/8.png",
+            "display": "4.4 inches",
+            "price": 400,
+            "rating": 0,
+            "status": 1
+        }
+    ]
+}

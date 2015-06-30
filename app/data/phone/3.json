@@ -1,0 +1,56 @@
+{
+		"id":3,
+		"name":"Nokia",
+		"image":"http://litzia.com.mx/wp-content/uploads/2012/01/Nokia-Lumina-800.png",
+		"content":"connecting people",
+		"additionalInformation":{
+		"location":"Finland",
+		"manufacturer":"Nokia corporation",
+		"capacity": ["4 GB","8 GB", "16 GB", "32 GB", "64 GB", "128 GB"],
+		"models":4
+		
+	},
+	"models":[
+		
+		{
+		"id":1,
+		"name":"Nokia Lumia 800",
+		"yearIntroduced": 2014,
+		"image":"/img/89535.png",
+		"display":"5.1 inches",
+		"price":800,
+		"rating":0,
+		"status":2
+		},
+		{
+		"id":2,
+		"name":"Nokia-W10",
+		"yearIntroduced": 2013,
+		"image":"/img/Nokia-W10.png",
+		"display":"4 inches",
+		"price":450,
+		"rating":0,
+		"status":2
+		},
+		{
+		"id":3,
+		"name":"Nokia-X10",
+		"yearIntroduced": 2013,
+		"image":"/img/Nokia-X10.png",
+		"display":"4.5 inches",
+		"price":350,
+		"rating":0,
+		"status":1
+		},
+		{
+		"id":4,
+		"name":"Nokia Lumia 735",
+		"yearIntroduced": 2014,
+		"image":"img/nokia_lumia_735_2.jpg",
+		"display":"5 inches",
+		"price":600,
+		"rating":0,
+		"status":2
+		}
+	]
+}

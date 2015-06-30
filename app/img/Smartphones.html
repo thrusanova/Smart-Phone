@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://localhost:1234/phoneDetails.html -->
+<html lang="en" ng-app="phoneApp" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}</style>
+  <meta charset="utf-8">
+  <title>Smartphones</title>
+  <link rel="stylesheet" href="http://localhost:1234/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://localhost:1234/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="http://localhost:1234/css/app.css">
+</head>
+<body ng-app="phoneApp" ng-controller="PageController" ng-clock="" class="ng-scope" cz-shortcut-listen="true">
+	<div class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="http://localhost:1234/" class="navbar-brand">Smartphones</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+            	<a href="http://localhost:1234/editPhone.html">Add phone</a>
+            	</li>
+          </ul> 
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="jumbotron ng-scope" ng-controller="PhoneDetailsController">
+        <div class="row">
+        <div class="col-md-6">
+      <h1 class="ng-binding">IPhone</h1>
+      <p class="ng-binding"><strong>Mobile pnone:</strong> next generation smartphone </p>
+      <p><strong>More information: </strong>
+        <button class="btn btn-sm pull-right ng-binding" ng-click="showMoreInfo()">Hide</button>
+        </p><div class="panel panel-default" ng-hide="hideInformation">
+         <div class="panel-body">
+           <p class="ng-binding">
+            <strong>Manufacturer:</strong>Apple</p>
+          <p class="ng-binding">
+            <strong>Location:</strong>USA</p>
+         <p>
+            <strong>Capacity:</strong>
+            <button class="btn btn-sm pull-right ng-binding" ng-click="showCapacity()">Hide</button>
+            </p><ul class="list-group" ng-hide="hideCapacity">
+              <!-- ngRepeat: memory in smartphone.capacity --></ul><p></p>
+          </div>
+          </div><p></p>
+            <p class="ng-binding">
+            <strong>Models:</strong>5 realesed
+               <button class="btn btn-sm pull-right ng-binding" ng-click="showModels()">View</button>
+               </p><div ng-show="showAllModels" class="ng-hide">
+                <div class="row">
+                  Sort:
+                  <select ng-model="sort" class="ng-pristine ng-valid">
+                    <option value="name">Name</option>
+                    <option value="-year">Year</option>
+                    <option value="display">Display</option>
+                    <option value="price">Price</option>
+                    <option value="rating">Rating</option>
+                  </select>
+                  <div class="pull-right">
+                    Search:
+                    <input type="text" ng-model="search" class="ng-pristine ng-valid"></div>
+                </div>
+                <br>
+               <ul class="nav nav-tabs">
+               <!-- ngRepeat: model in smartphone.models | limitTo:5 | orderBy:sort  | filter:search --><li ng-repeat="model in smartphone.models | limitTo:5 | orderBy:sort  | filter:search" class="ng-scope">
+                <a href="http://localhost:1234/phoneDetails.html#model-1" data-toggle="tab" class="ng-binding">IPhone 5 </a>
+              </li><!-- end ngRepeat: model in smartphone.models | limitTo:5 | orderBy:sort  | filter:search --><li ng-repeat="model in smartphone.models | limitTo:5 | orderBy:sort  | filter:search" class="ng-scope">
+                <a href="http://localhost:1234/phoneDetails.html#model-2" data-toggle="tab" class="ng-binding">IPhone 5C </a>
+              </li><!-- end ngRepeat: model in smartphone.models | limitTo:5 | orderBy:sort  | filter:search --><li ng-repeat="model in smartphone.models | limitTo:5 | orderBy:sort  | filter:search" class="ng-scope">
+                <a href="http://localhost:1234/phoneDetails.html#model-4" data-toggle="tab" class="ng-binding">IPhone 6+ </a>
+              </li><!-- end ngRepeat: model in smartphone.models | limitTo:5 | orderBy:sort  | filter:search --><li ng-repeat="model in smartphone.models | limitTo:5 | orderBy:sort  | filter:search" class="ng-scope">
+                <a href="http://localhost:1234/phoneDetails.html#model-5" data-toggle="tab" class="ng-binding">IPhone 6 </a>
+              </li><!-- end ngRepeat: model in smartphone.models | limitTo:5 | orderBy:sort  | filter:search --><li ng-repeat="model in smartphone.models | limitTo:5 | orderBy:sort  | filter:search" class="ng-scope">
+                <a href="http://localhost:1234/phoneDetails.html#model-3" data-toggle="tab" class="ng-binding">IPhone 5S </a>
+              </li><!-- end ngRepeat: model in smartphone.models | limitTo:5 | orderBy:sort  | filter:search -->
+            </ul>
+            <div class="tab-content">   
+                <!-- ngRepeat: model in smartphone.models --><div class="tab-pane fade ng-scope" id="model-1" ng-repeat="model in smartphone.models">
+                  <div class="panel panel-default">
+          <div class="panel-body row">
+            <div class="col-md-6">
+              <p>
+                <strong class="ng-binding"> IPHONE 5</strong>
+              </p>
+            <p class="ng-binding">
+                <strong>Year:</strong>2012
+              </p>
+                <p class="ng-binding">
+                <strong>Display:</strong>4 inches
+              </p>
+                <p class="ng-binding">
+                <strong>Price:</strong>$500.00
+              </p>
+               <p class="ng-binding">
+                <strong>Rating:</strong>0
+                <button class="btn btn-sm " ng-click="upVoteRating(model)">+</button>
+                <button class="btn btn-sm" ng-click="downVoteRating(model)">-</button>
+              </p>
+                <p class="ng-binding">
+                <strong>Status:</strong>Sold out
+              </p>
+           </div>
+           <div class="col-md-6 image-container">
+    <img src="./Smartphones_files/IPhone_5.png" alt="IPhone 5">
+    </div>
+        </div>
+                </div>
+              </div><!-- end ngRepeat: model in smartphone.models --><div class="tab-pane fade ng-scope" id="model-2" ng-repeat="model in smartphone.models">
+                  <div class="panel panel-default">
+          <div class="panel-body row">
+            <div class="col-md-6">
+              <p>
+                <strong class="ng-binding"> IPHONE 5C</strong>
+              </p>
+            <p class="ng-binding">
+                <strong>Year:</strong>2013
+              </p>
+                <p class="ng-binding">
+                <strong>Display:</strong>4 inches
+              </p>
+                <p class="ng-binding">
+                <strong>Price:</strong>$450.00
+              </p>
+               <p class="ng-binding">
+                <strong>Rating:</strong>0
+                <button class="btn btn-sm " ng-click="upVoteRating(model)">+</button>
+                <button class="btn btn-sm" ng-click="downVoteRating(model)">-</button>
+              </p>
+                <p class="ng-binding">
+                <strong>Status:</strong>available
+              </p>
+           </div>
+           <div class="col-md-6 image-container">
+    <img src="./Smartphones_files/5.png" alt="IPhone 5C">
+    </div>
+        </div>
+                </div>
+              </div><!-- end ngRepeat: model in smartphone.models --><div class="tab-pane fade ng-scope" id="model-3" ng-repeat="model in smartphone.models">
+                  <div class="panel panel-default">
+          <div class="panel-body row">
+            <div class="col-md-6">
+              <p>
+                <strong class="ng-binding"> IPHONE 5S</strong>
+              </p>
+            <p class="ng-binding">
+                <strong>Year:</strong>2013
+              </p>
+                <p class="ng-binding">
+                <strong>Display:</strong>4 inches
+              </p>
+                <p class="ng-binding">
+                <strong>Price:</strong>$700.00
+              </p>
+               <p class="ng-binding">
+                <strong>Rating:</strong>0
+                <button class="btn btn-sm " ng-click="upVoteRating(model)">+</button>
+                <button class="btn btn-sm" ng-click="downVoteRating(model)">-</button>
+              </p>
+                <p class="ng-binding">
+                <strong>Status:</strong>available
+              </p>
+           </div>
+           <div class="col-md-6 image-container">
+    <img src="./Smartphones_files/5s.png" alt="IPhone 5S">
+    </div>
+        </div>
+                </div>
+              </div><!-- end ngRepeat: model in smartphone.models --><div class="tab-pane fade ng-scope" id="model-4" ng-repeat="model in smartphone.models">
+                  <div class="panel panel-default">
+          <div class="panel-body row">
+            <div class="col-md-6">
+              <p>
+                <strong class="ng-binding"> IPHONE 6+</strong>
+              </p>
+            <p class="ng-binding">
+                <strong>Year:</strong>2013
+              </p>
+                <p class="ng-binding">
+                <strong>Display:</strong>4.7 inches
+              </p>
+                <p class="ng-binding">
+                <strong>Price:</strong>$800.00
+              </p>
+               <p class="ng-binding">
+                <strong>Rating:</strong>0
+                <button class="btn btn-sm " ng-click="upVoteRating(model)">+</button>
+                <button class="btn btn-sm" ng-click="downVoteRating(model)">-</button>
+              </p>
+                <p class="ng-binding">
+                <strong>Status:</strong>available
+              </p>
+           </div>
+           <div class="col-md-6 image-container">
+    <img src="./Smartphones_files/7.jpg" alt="IPhone 6+">
+    </div>
+        </div>
+                </div>
+              </div><!-- end ngRepeat: model in smartphone.models --><div class="tab-pane fade ng-scope" id="model-5" ng-repeat="model in smartphone.models">
+                  <div class="panel panel-default">
+          <div class="panel-body row">
+            <div class="col-md-6">
+              <p>
+                <strong class="ng-binding"> IPHONE 6</strong>
+              </p>
+            <p class="ng-binding">
+                <strong>Year:</strong>2014
+              </p>
+                <p class="ng-binding">
+                <strong>Display:</strong>5.5 inches
+              </p>
+                <p class="ng-binding">
+                <strong>Price:</strong>$900.00
+              </p>
+               <p class="ng-binding">
+                <strong>Rating:</strong>0
+                <button class="btn btn-sm " ng-click="upVoteRating(model)">+</button>
+                <button class="btn btn-sm" ng-click="downVoteRating(model)">-</button>
+              </p>
+                <p class="ng-binding">
+                <strong>Status:</strong>available
+              </p>
+           </div>
+           <div class="col-md-6 image-container">
+    <img src="./Smartphones_files/6.png" alt="IPhone 6">
+    </div>
+        </div>
+                </div>
+              </div><!-- end ngRepeat: model in smartphone.models -->
+            </div>
+            </div>
+          <p></p>   
+               <div class="clear"></div>
+</div>
+   <div class="col-md-6 image-containers">
+    <img src="./Smartphones_files/2.png">
+    </div>
+    	</div>
+    </div>
+	<footer class="text-center">
+		<hr>
+<small class="ng-binding">
+ 
+	Copiright:Tanya Yaneva
+<br>Year:2015
+</small>
+	</footer>
+  <script src="./Smartphones_files/jquery-2.1.4.js"></script>
+  <script src="./Smartphones_files/bootstrap.min.js"></script>
+  <script src="./Smartphones_files/angular.min.js"></script>
+  <script scr="js/app.js"></script>
+ <script src="./Smartphones_files/PageController.js"></script>
+  <script src="./Smartphones_files/PhoneDetailsController.js"></script>
+  <script src="./Smartphones_files/status.js"></script>
+  <script src="./Smartphones_files/pnoneDatas.js"></script>
+
+
+
+
+</div></body></html>

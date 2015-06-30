@@ -1,0 +1,98 @@
+ <div class="container">
+
+      <div class="jumbotron" ng-controller="PhoneDetailsController">
+        <div class ="row">
+        <div class ="col-md-6">
+      <h1>{{ smartphone.name }}</h1>
+      <p><strong>Mobile pnone:</strong> {{ smartphone.content }} </p>
+      <p><strong>More information: </strong>
+        <button class="btn btn-sm pull-right"  ng-click="showMoreInfo()">{{ ShowIfoText }}</button>
+        <div class ="panel panel-default" ng-hide="hideInformation">
+         <div class="panel-body">
+           <p>
+            <strong>Manufacturer:</strong>{{ smartphone.additionalInformation.manufacturer }}</p>
+          <p>
+            <strong>Location:</strong>{{ smartphone.additionalInformation.location }}</p>
+         <p>
+            <strong>Capacity:</strong>
+            <button class="btn btn-sm pull-right"  ng-click="showCapacity()">{{ ShowCapacityText }}</button>
+            <ul class="list-group" ng-hide="hideCapacity">
+              <li class="list-group-item text-center"  ng-class-even="evenMemory" ng-repeat="memory in smartphone.additionalInformation.capacity">
+                 <a href="#" ng-style="fontBoldclass" ng-class="blueTextClass"> {{ memory }}</a>
+              </li></ul></p>
+          </div>
+          </div></p>
+            <p>
+            <strong>Models:</strong>{{ smartphone.additionalInformation.models }} realesed
+               <button class="btn btn-sm pull-right"  ng-click="showModels()">{{ ShowModelsText }}</button>
+             </p>
+              <p>
+                    <strong>Rating: </strong><span class="pull-right">{{ (4 + 4 + 6+ 4) / 5 | number: 2 }} / 5</span>
+                </p>
+               <div ng-show="showAllModels">
+                <div class="row">
+                  Sort:
+                  <select ng-model="sort">
+                    <option value="name">Name</option>
+                    <option value="-year">Year</option>
+                    <option value="display">Display</option>
+                    <option value="price">Price</option>
+                    <option value="rating">Rating</option>
+                  </select>
+                  <div class="pull-right">
+                    Search:
+                    <input type="text" ng-model="search"></div>
+                </div>
+                <br/>
+               <ul class="nav nav-tabs">
+               <li ng-repeat="model in smartphone.models | limitTo:5 | orderBy:sort  | filter:search">
+                <a href="#model-{{ model.id }}" target="_self" data-toggle="tab">{{ model.name }} </a>
+              </li>
+            </ul>
+            <div class ="tab-content">   
+                <div class="tab-pane fade" id="model-{{ model.id }}" ng-repeat="model in smartphone.models">
+                  <div class="panel panel-default">
+          <div class="panel-body row">
+            <div class="col-md-6">
+              <p>
+                <strong> {{ model.name | uppercase}}</strong>
+              </p>
+            <p>
+                <strong>Year:</strong>{{ model.yearIntroduced }}
+              </p>
+                <p>
+                <strong>Display:</strong>{{ model.display }}
+              </p>
+                <p>
+                <strong>Price:</strong>{{ model.price | number:2 | currency }}
+              </p>
+               <p>
+                <strong>Rating:</strong>{{ model.rating }}
+                <button class="btn btn-sm " ng-click ="upVoteRating(model)">+</button>
+                <button class="btn btn-sm" ng-click="downVoteRating(model)">-</button>
+              </p>
+                <p>
+                <strong>Status:</strong>{{ model.status | status}}
+              </p>
+
+           </div>
+
+           <div class="col-md-6 image-container">
+    <img src="{{ model.image }}" src="" alt="{{model.name}}" />
+    </div>
+        </div>
+                </div>
+              </div>
+
+            </div>
+
+            </div>
+        
+               <div class="clear"></div>
+</div>
+   <div class="col-md-6 image-containers">
+    <img src="{{ smartphone.image }}"/>
+    </div>
+    	</div>
+    </div>
+	

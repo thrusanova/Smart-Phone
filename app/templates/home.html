@@ -1,0 +1,19 @@
+<div class="container clearfix" ng-controller="ListPhonesController">
+    
+        <h1>All Phones</h1>
+        <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-4 pull-right">
+                  <div class="pull-right">
+                    Search:
+                    <input type="text" ng-model="search"></div>
+                </div>
+             
+        </div>
+        <div class="row" ng-repeat="row in smartphones.range()">
+            <div class="col-md-4 text-center" ng-repeat="smartphone in smartphones.slice(row, row + 3) | filter: search">
+                <div phone-home-directive smart="smartphone" />
+            </div>
+        </div>
+    </div>
+</div>

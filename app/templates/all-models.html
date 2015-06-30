@@ -1,0 +1,27 @@
+<div class="container clearfix" ng-controller="ListModelsController">
+    <div class="row">
+        <div class="col-md-2 big-text">
+            Search:
+        </div>
+        <div class="col-md-10">
+            <input type="text" class="form-control" ng-model="search" />
+        </div>
+    </div>
+    <br />
+    <div class="jumbotron" ng-repeat="model in models | filter: search">
+        <h2 class="text-center">
+            <strong>
+                <a href="#/phone-details/{{models.smartphoneId}}">{{ model.smartphone | uppercase }}</a>
+            </strong>
+        </h2>
+        <br />
+        <div model-details model="model" />
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    <a class="btn btn-default btn-sm" href="#/phone-details/{{model.smartphoneId}}/edit-model/{{ model.id }}">Edit</a>
+                <p/>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 {
-  "name": "music-artists",
-  "description": "Music Artists SPA",
-  "repository": "https://github.com/ivaylokenov/Music-Artists/",
+  "name": "phone-app",
+  "description": "Smartphone SPA",
+  "repository": "https://github.com/thrusanova/Smart-Phone/",
   "devDependencies": {}
 }
